@@ -1,0 +1,107 @@
+@font-face {
+    font-family: PaulsCelticFont;
+    src: url(/static/fonts/PaulsCelticFont3.ttf);
+}
+
+html, body {
+    background-color: #eefff8;
+    font-size: 18px;
+}
+
+#header {
+    padding: 15px 0;
+}
+
+/*
+ * COLORS
+ *
+ * dark green:  #277616
+ * light green: #74d326
+ * gold:        #f8e713
+ * brown:       #57340a
+ * beige:       #fdd3a4
+ *
+ */
+
+#sticky-navbar {
+    background-color: #eefff8;
+}
+
+#sticky-navbar nav {
+    margin: 15px 0;
+    background-color: #277616;
+    border-top: solid #57340a 5px;
+    border-bottom: solid #57340a 5px;
+}
+
+#sticky-navbar a.navbar-brand,
+#sticky-navbar .nav > li > a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f8e713;
+    text-shadow:  1px  1px 1px #57340a,
+                  1px -1px 1px #57340a,
+                 -1px  1px 1px #57340a,
+                 -1px -1px 1px #57340a;
+}
+
+#sticky-navbar a.navbar-brand {
+    font-family: PaulsCelticFont;
+    font-size: 25px;
+}
+
+#sticky-navbar .nav > li > a:active,
+#sticky-navbar .nav > li > a:focus,
+#sticky-navbar .nav > li > a:hover {
+    background-color: #74d326;
+}
+.nav > li > a:focus, .nav > li > a:hover {
+
+    text-decoration: none;
+    background-color: #eee;
+
+}
+
+.navbar-toggle {
+    background-color: #74d326;
+    border-color: #57340a;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: #57340a;
+}
+
+@media screen and (min-width: 768px) {
+    body.default #sticky-navbar,
+    .sticky-navbar-fixed {
+        display: block;
+        top: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+    }
+    body.default #body,
+    .sticky-placeholder-active {
+        padding-top: 92px;
+    }
+}
+
+h1 {
+    color: #74d326;
+    font-size: 48px;
+    text-shadow:  1px  1px 1px #57340a,
+                  1px -1px 1px #57340a,
+                 -1px  1px 1px #57340a,
+                 -1px -1px 1px #57340a;
+}
+
+h2 {
+    color: #277616;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+p {
+    line-height: 1.6;
+    margin: 15px 0;
+}

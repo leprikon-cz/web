@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{ title }} &mdash; Leprikón{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="/" style="display: inline-block; border-radius: 10px; background-color: #efd; padding: 0 5px 2px;">
+        <img alt="Leprikón" src="{% static 'img/logo-horizontal.png' %}" height="35" />
+    </a>
+    &nbsp;
+    <a href="{% url 'admin:index' %}">Administrace</a>
+</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./manage.py makemessages -l cs && vim conf/locale/cs/LC_MESSAGES/django.po && ./manage.py compilemessages
