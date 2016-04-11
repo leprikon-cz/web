@@ -171,22 +171,22 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'htdocs', 'media')
 
 # Additional locations of static files
-STATICFILES_DIRS = (
+STATICFILES_DIRS = [
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(BASE_DIR, 'static'),
-)
+]
 
 SITE_ID = 1
 
-LANGUAGES = (
+LANGUAGES = [
     ('cs', _('Czech')),
-)
+]
 
-LOCALE_PATHS = (
+LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'conf', 'locale'),
-)
+]
 
 
 LOGGING = {
@@ -241,10 +241,10 @@ CMS_LANGUAGES = {
     },
 }
 
-CMS_TEMPLATES = (
+CMS_TEMPLATES = [
     ('default.html', _('Default')),
     ('jumbotron.html', _('Jumbotron')),
-)
+]
 
 CMS_PLACEHOLDER_CONF = {
     'content': {
@@ -271,10 +271,12 @@ MIGRATION_MODULES = {
     'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django',
 }
 
+THUMBNAIL_DEBUG = os.environ.get('DEBUG', False) == 'THUMBNAIL'
+
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',
-    'easy_thumbnails.processors.scale_and_crop',
+    #'easy_thumbnails.processors.scale_and_crop',
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
