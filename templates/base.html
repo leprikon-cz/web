@@ -1,4 +1,4 @@
-{% load cms_tags menu_tags sekizai_tags staticfiles %}
+{% load cms_tags menu_tags sekizai_tags staticfiles ganalytics %}
 <!DOCTYPE html>
 <html lang="cs-CZ">
 
@@ -78,6 +78,8 @@
     {% block base_content %}{% endblock %}
     </div>
     <!-- Content end -->
+
+{% ganalytics %}
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.1.min.js"

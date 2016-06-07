@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     'cmsplugin_filer_teaser',
     'cmsplugin_filer_utils',
     'cmsplugin_filer_video',
+    'ganalytics',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -291,6 +292,8 @@ THUMBNAIL_ALIASES = {
         },
     },
 }
+
+GANALYTICS_TRACKING_CODE = 'UA-78897621-1'
 
 TEST_RUNNER = None
 
