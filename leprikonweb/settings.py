@@ -18,7 +18,7 @@ import os
 from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -263,15 +263,6 @@ CACHES = {
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
-MIGRATION_MODULES = {
-    'cmsplugin_filer_file': 'cmsplugin_filer_file.migrations_django',
-    'cmsplugin_filer_folder': 'cmsplugin_filer_folder.migrations_django',
-    'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
-    'cmsplugin_filer_link': 'cmsplugin_filer_link.migrations_django',
-    'cmsplugin_filer_teaser': 'cmsplugin_filer_teaser.migrations_django',
-    'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django',
-}
-
 THUMBNAIL_DEBUG = os.environ.get('DEBUG', False) == 'THUMBNAIL'
 
 THUMBNAIL_PROCESSORS = (
@@ -294,6 +285,12 @@ THUMBNAIL_ALIASES = {
 }
 
 GANALYTICS_TRACKING_CODE = 'UA-78897621-1'
+
+CONTAINER_TEMPLATES = {
+    'collapse': {
+        'label': _('collapse'),
+    },
+}
 
 TEST_RUNNER = None
 

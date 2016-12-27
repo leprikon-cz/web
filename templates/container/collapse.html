@@ -1,0 +1,19 @@
+{% load cms_tags %}
+
+<div class="collapse" id="collapse-{{ instance.id }}">
+    <div class="card card-block">
+        {% for plugin in instance.child_plugin_instances %}
+            {% render_plugin plugin %}
+        {% endfor %}
+    </div>
+</div>
+<p>
+    <a class="collapse" data-toggle="collapse" href="#collapse-{{ instance.id }}" aria-expanded="false" aria-controls="collapse-{{ instance.id }}">
+        více
+    </a>
+</p>
+
+
+<div class="{{ instance.conf.class }}">
+</div>
+
