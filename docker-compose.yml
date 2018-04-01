@@ -1,0 +1,28 @@
+version: '3.4'
+services:
+
+  web:
+    image: misli/leprikonweb
+    depends_on:
+      - memcached
+    environment:
+      DEBUG: TEMPLATE
+      SECRET_KEY: secretkey
+      MEMCACHED_LOCATION: memcached:11211
+    ports:
+      - 127.0.0.1:80:80
+    restart: unless-stopped
+    volumes:
+      - ./.ipython:/root/.ipython:z
+      - ./data:/app/data:z
+      - ./htdocs/media:/app/htdocs/media:z
+      - ./leprikonweb:/app/leprikonweb:ro
+      - ./locale:/app/locale:ro
+      - ./static:/app/static:ro
+      - ./templates:/app/templates:ro
+
+  memcached:
+    image: memcached
+    ports:
+      - 127.0.0.1:11211:11211
+    restart: unless-stopped
