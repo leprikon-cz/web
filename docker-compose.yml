@@ -1,28 +1,22 @@
 version: '3.4'
 services:
-
   web:
-    image: misli/leprikonweb
+    image: leprikon/web
+    build: .
     depends_on:
       - memcached
     environment:
-      DEBUG: TEMPLATE
-      SECRET_KEY: secretkey
+      EMAIL_HOST: smtp.savana.cz
+      EMAIL_HOST_USER: leprikon@leprikon.cz
+      EMAIL_HOST_PASSWORD: emailpassword
       MEMCACHED_LOCATION: memcached:11211
+      SECRET_KEY: secretkey
     ports:
-      - 127.0.0.1:80:80
-    restart: unless-stopped
+      - 127.0.0.1:9010:80
     volumes:
-      - ./.ipython:/root/.ipython:z
-      - ./data:/app/data:z
-      - ./htdocs/media:/app/htdocs/media:z
-      - ./leprikonweb:/app/leprikonweb:ro
-      - ./locale:/app/locale:ro
-      - ./static:/app/static:ro
-      - ./templates:/app/templates:ro
+      - ./web/media:/app/htdocs/media
+      - ./web/data:/app/data
+    tty: true
 
   memcached:
     image: memcached
-    ports:
-      - 127.0.0.1:11211:11211
-    restart: unless-stopped

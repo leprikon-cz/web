@@ -1,1 +1,3 @@
-test -d /etc/letsencrypt/live/leprikon.cz || /srv/letsencrypt/letsencrypt-auto certonly --webroot -w /django/leprikonweb/htdocs -d leprikon.cz -d www.leprikon.cz
+#!/bin/bash
+
+letsencrypt certonly --webroot -w /srv/letsencrypt/htdocs -d leprikon.cz -d www.leprikon.cz
